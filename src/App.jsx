@@ -1,15 +1,16 @@
-import Navbar from './components/Navbar.jsx'
-import Middle from './components/middle.jsx'
-import { Routes, Route } from "react-router-dom"
-import Form from './components/form.jsx'
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import Form from "./pages/form.jsx";
+import Dashboard from "./pages/dashboard.jsx";
+
 function App() {
-  
-  return <div>
-    
-    <Navbar></Navbar>
-    <Middle></Middle>
-    
-  </div>
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/register" element={<Form />} />
+      <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+    </Routes>
+  );
 }
 
-export default App
+export default App;
