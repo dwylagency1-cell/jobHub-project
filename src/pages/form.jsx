@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import logo from './img/jobhub_logo.png'
+import logo from './img/joblogo.png'
 import Dashboard from './dashboard.jsx'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
@@ -25,7 +25,7 @@ function Form() {
     return <div className="h-screen w-full bg-[#F8FAFC] flex justify-center items-center">
         <div >
             <form onSubmit={handelSubmit} className="bg-white flex flex-col justify-center items-center gap-y-[20px] p-[100px] rounded-[20px]">
-                <img className='w-[200px]' src={logo}></img>
+                <img className='w-[300px]' src={logo}></img>
                 <div className="flex justify-between items-center gap-x-[10px]">
                     <input className="w-[200px] pt-[10px] pb-[10px] border-solid border rounded-[10px] pl-[5px]" type="text" name='first_name' placeholder="First name" value={first} onChange={function(e){
                         setFirst(e.target.value);
