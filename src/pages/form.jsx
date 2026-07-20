@@ -3,7 +3,7 @@ import logo from './img/joblogo.png'
 import Dashboard from './dashboard.jsx'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
-function Form() {
+function Form(props) {
     const navigate = useNavigate()
     function handelSubmit(e) {
         e.preventDefault()
