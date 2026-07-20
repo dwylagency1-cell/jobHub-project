@@ -13,7 +13,10 @@ function Nabvar() {
                     <Link to={'/save'}>Saved jobs</Link>
                     <Link to={'/about'}>About</Link>
                 </div>
-                <div className="bg-blue-300 h-[60px] w-[300px] "></div>
+                <div className="bg-blue-300 h-[60px] w-[300px] flex justify-between items-center">
+                    <p>{}</p>
+
+                </div>
             </div>
             <div className=' w-[1300px] h-[50px] ml-[40px] mt-[40px] mr-[40px] mb-[20px] flex items-center'>
                 <h1 className='ml-[40px] text-[30px] text-[white] font-semibold'>Find Your Dream Job Here</h1>
