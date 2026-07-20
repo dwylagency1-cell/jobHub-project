@@ -8,7 +8,7 @@ function Dashboard() {
     jobType: "Full Time",
     company: "Google",
     payRate: "$120/hr",
-    logo: "https://logo.clearbit.com/google.com"
+    logo: "https://cdn.simpleicons.org/google"
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ function Dashboard() {
     jobType: "Full Time",
     company: "Microsoft",
     payRate: "$135/hr",
-    logo: "https://logo.clearbit.com/microsoft.com"
+    logo: "https://cdn.simpleicons.org/microsoft"
   },
   {
     id: 3,
