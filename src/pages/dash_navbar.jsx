@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import img from './img/joblogo.png'
 import { Search, MapPin } from "lucide-react";
-function Nabvar() {
+function Nabvar(props) {
     return <div>
         <div className='bg-green-300 h-[300px] w-full'>
             <div className="flex  justify-between items-center">
@@ -14,7 +14,7 @@ function Nabvar() {
                     <Link to={'/about'}>About</Link>
                 </div>
                 <div className="bg-blue-300 h-[60px] w-[300px] flex justify-between items-center">
-                    <p>{}</p>
+                    <p>{props.first}</p>
 
                 </div>
             </div>
