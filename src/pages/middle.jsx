@@ -1,3 +1,4 @@
+import Fuse from "fuse.js";
 function Middle(props){
     const jobHub = props.job
     console.log(jobHub)
