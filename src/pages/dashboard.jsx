@@ -1,6 +1,28 @@
 import Navbar from './dash_navbar.jsx'
 import Middle from './middle.jsx'
-function Dashboard() {
+import Airbnb from './img/airbnb.png'
+import Apple from './img/apple.png'
+import Atlassian from './img/atlassian.png'
+import Cisco from './img/cisco.png'
+import Coinbase from './img/coinbase.png'
+import Figma from './img/figma.png'
+import Gitlab from './img/gitlab.png'
+import Meta from './img/meta.png'
+import Netflix from './img/netflix.png'
+import Nvidia from './img/nvidia.png'
+import Samsung from './img/samsung.png'
+import Tasla from './img/tasla.png'
+import Uber from './img/uber.png'
+import Microsoft from './img/microsoft.png'
+import Adobe from './img/adobe.png'
+import Google from './img/google.jpg'
+import Chat from './img/chatgpt.png'
+
+function Dashboard(props) {
+
+  const first = localStorage.getItem("first")
+  const last = localStorage.getItem("last")
+  console.log(first)
     const jobs = [
   {
     id: 1,
@@ -8,7 +30,7 @@ function Dashboard() {
     jobType: "Full Time",
     company: "Google",
     payRate: "$120/hr",
-    logo: "https://cdn.simpleicons.org/google"
+    logo: Google
   },
   {
     id: 2,
@@ -16,7 +38,7 @@ function Dashboard() {
     jobType: "Full Time",
     company: "Microsoft",
     payRate: "$135/hr",
-    logo: "https://cdn.simpleicons.org/microsoft"
+    logo: Microsoft
   },
   {
     id: 3,
@@ -24,7 +46,7 @@ function Dashboard() {
     jobType: "Part Time",
     company: "Adobe",
     payRate: "$95/hr",
-    logo: "https://logo.clearbit.com/adobe.com"
+    logo: Adobe
   },
   {
     id: 4,
@@ -32,7 +54,7 @@ function Dashboard() {
     jobType: "Full Time",
     company: "OpenAI",
     payRate: "$180/hr",
-    logo: "https://logo.clearbit.com/openai.com"
+    logo: Chat
   },
   {
     id: 5,
@@ -48,7 +70,7 @@ function Dashboard() {
     jobType: "Part Time",
     company: "Samsung",
     payRate: "$90/hr",
-    logo: "https://logo.clearbit.com/samsung.com"
+    logo: Samsung
   },
   {
     id: 7,
@@ -56,7 +78,7 @@ function Dashboard() {
     jobType: "Full Time",
     company: "Netflix",
     payRate: "$170/hr",
-    logo: "https://logo.clearbit.com/netflix.com"
+    logo: Netflix
   },
   {
     id: 8,
@@ -64,7 +86,7 @@ function Dashboard() {
     jobType: "Full Time",
     company: "Meta",
     payRate: "$160/hr",
-    logo: "https://logo.clearbit.com/meta.com"
+    logo: Meta
   },
   {
     id: 9,
@@ -72,7 +94,7 @@ function Dashboard() {
     jobType: "Part Time",
     company: "Apple",
     payRate: "$150/hr",
-    logo: "https://logo.clearbit.com/apple.com"
+    logo: Apple
   },
   {
     id: 10,
@@ -80,7 +102,7 @@ function Dashboard() {
     jobType: "Full Time",
     company: "Cisco",
     payRate: "$140/hr",
-    logo: "https://logo.clearbit.com/cisco.com"
+    logo: Cisco
   },
   {
     id: 11,
@@ -88,7 +110,7 @@ function Dashboard() {
     jobType: "Full Time",
     company: "Tesla",
     payRate: "$165/hr",
-    logo: "https://logo.clearbit.com/tesla.com"
+    logo: Tasla
   },
   {
     id: 12,
@@ -96,7 +118,7 @@ function Dashboard() {
     jobType: "Part Time",
     company: "Figma",
     payRate: "$100/hr",
-    logo: "https://logo.clearbit.com/figma.com"
+    logo: Figma
   },
   {
     id: 13,
@@ -112,7 +134,7 @@ function Dashboard() {
     jobType: "Part Time",
     company: "GitLab",
     payRate: "$115/hr",
-    logo: "https://logo.clearbit.com/gitlab.com"
+    logo: Gitlab
   },
   {
     id: 15,
@@ -120,7 +142,7 @@ function Dashboard() {
     jobType: "Full Time",
     company: "Coinbase",
     payRate: "$190/hr",
-    logo: "https://logo.clearbit.com/coinbase.com"
+    logo: Coinbase
   },
   {
     id: 16,
@@ -128,7 +150,7 @@ function Dashboard() {
     jobType: "Full Time",
     company: "NVIDIA",
     payRate: "$210/hr",
-    logo: "https://logo.clearbit.com/nvidia.com"
+    logo: Nvidia
   },
   {
     id: 17,
@@ -136,7 +158,7 @@ function Dashboard() {
     jobType: "Part Time",
     company: "Atlassian",
     payRate: "$85/hr",
-    logo: "https://logo.clearbit.com/atlassian.com"
+    logo: Atlassian
   },
   {
     id: 18,
@@ -152,7 +174,7 @@ function Dashboard() {
     jobType: "Part Time",
     company: "Airbnb",
     payRate: "$130/hr",
-    logo: "https://logo.clearbit.com/airbnb.com"
+    logo: Airbnb
   },
   {
     id: 20,
@@ -160,11 +182,11 @@ function Dashboard() {
     jobType: "Full Time",
     company: "Uber",
     payRate: "$150/hr",
-    logo: "https://logo.clearbit.com/uber.com"
+    logo: Uber
   }
 ];
     return <div>
-        <Navbar></Navbar>
+        <Navbar first = {first} last = {last}></Navbar>
         <Middle job={jobs}> </Middle>
         
     </div>
