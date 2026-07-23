@@ -1,14 +1,28 @@
 import Fuse from "fuse.js";
+import { useState } from "react";
 function Middle(props){
+
+    const query = props.query
     const jobHub = props.job
-    console.log(jobHub)
+
+    const fuse = new Fuse(jobHub, {
+        keys: ["jobTitle", "company", "jobType"],
+        threshold: 0.3,  
+    })
+   
+    const results = query ? fuse.search(query) : []
+
+    const displayItems = results.length > 0
+    ? results.map(({ item }) => item)
+    : jobHub
+
     
     return <div>
         <div className=' w-full h-[80px] flex items-center pl-[80px]'>
             <h1 className='text-[30px]'>Recommended Jobs</h1>
         </div>
         <div className="grid grid-cols-[300px_300px_300px_300px] gap-x-[20px] gap-y-[20px] p-[50px]">
-            {jobHub.map(function(elem){
+            {displayItems.map(function(elem){
                 return <div>
                     <div className="h-[300px] bg-white rounded-[20px] shadow-md p-[20px] flex flex-col justify-between">
 
@@ -34,7 +48,9 @@ function Middle(props){
 
                         </div>
 
-                        <button className="text-gray-400 text-[22px] cursor-pointer">
+                        <button onClick={function(){
+                            className="bg-red-500"
+                        }} className="text-gray-400 text-[22px] cursor-pointer">
                             ♡
                         </button>
                     </div>
