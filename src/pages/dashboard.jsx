@@ -1,25 +1,31 @@
 import Navbar from './dash_navbar.jsx'
 import Middle from './middle.jsx'
-import Airbnb from './img/airbnb.png'
-import Apple from './img/apple.png'
-import Atlassian from './img/atlassian.png'
-import Cisco from './img/cisco.png'
-import Coinbase from './img/coinbase.png'
-import Figma from './img/figma.png'
-import Gitlab from './img/gitlab.png'
-import Meta from './img/meta.png'
-import Netflix from './img/netflix.png'
-import Nvidia from './img/nvidia.png'
-import Samsung from './img/samsung.png'
-import Tasla from './img/tasla.png'
-import Uber from './img/uber.png'
+import Airbnb from './img/Airbnb_logo.jpg'
+import Apple from './img/apple_logo.jpg'
+import Atlassian from './img/Atlassian_logo.png'
+import Cisco from './img/cisco.webp'
+import Coinbase from './img/coinbase_logo.png'
+import Figma from './img/figma_logo.png'
+import Gitlab from './img/gitlab_logo.webp'
+import Meta from './img/meta_logo.jpg'
+import Netflix from './img/netflix_logo.jpg'
+import Nvidia from './img/Nvidia_Logo.webp'
+import Samsung from './img/samsung_logo.avif'
+import Tasla from './img/Tesla_logo.png'
+import Uber from './img/Uber_Logo.png'
 import Microsoft from './img/microsoft.png'
 import Adobe from './img/adobe.png'
 import Google from './img/google.jpg'
 import Chat from './img/chatgpt.png'
+import Amazon from './img/amazon_logo.webp'
+import Oracle from './img/oracle_logo.png'
+import Spotify from './img/Spotify_logo.webp'
+import Fuse from "fuse.js"
+import { useState } from "react";
+
 
 function Dashboard(props) {
-
+  const [query, setQuery] = useState("");
   const first = localStorage.getItem("first")
   const last = localStorage.getItem("last")
   console.log(first)
@@ -62,7 +68,7 @@ function Dashboard(props) {
     jobType: "Full Time",
     company: "Amazon",
     payRate: "$145/hr",
-    logo: "https://logo.clearbit.com/amazon.com"
+    logo: Amazon
   },
   {
     id: 6,
@@ -126,7 +132,7 @@ function Dashboard(props) {
     jobType: "Full Time",
     company: "Oracle",
     payRate: "$125/hr",
-    logo: "https://logo.clearbit.com/oracle.com"
+    logo: Oracle
   },
   {
     id: 14,
@@ -166,7 +172,7 @@ function Dashboard(props) {
     jobType: "Full Time",
     company: "Spotify",
     payRate: "$155/hr",
-    logo: "https://logo.clearbit.com/spotify.com"
+    logo: Spotify
   },
   {
     id: 19,
@@ -186,8 +192,8 @@ function Dashboard(props) {
   }
 ];
     return <div>
-        <Navbar first = {first} last = {last}></Navbar>
-        <Middle job={jobs}> </Middle>
+        <Navbar first = {first} last = {last} query={query} first={first} last={last} setQuery={setQuery}></Navbar>
+        <Middle job={jobs} query={query}></Middle>
         
     </div>
 }
