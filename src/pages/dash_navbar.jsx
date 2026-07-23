@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import img from './img/joblogo.png'
-import { Search, MapPin } from "lucide-react";
+import { Search, MapPin, PencilSparkles } from "lucide-react";
+import Fuse from "fuse.js"
+import {CircleUserRound} from 'lucide-react'
 function Nabvar(props) {
     return <div>
         <div className='bg-green-300 h-[300px] w-full'>
@@ -13,8 +15,19 @@ function Nabvar(props) {
                     <Link to={'/save'}>Saved jobs</Link>
                     <Link to={'/about'}>About</Link>
                 </div>
-                <div className="bg-blue-300 h-[60px] w-[300px] flex justify-between items-center">
-                    <p>{props.first}</p>
+                <div className=" h-[60px] w-[300px] flex justify-between items-center">
+                    <p className='text-[17px] ml-[10px]'>Hi, unemployed shit</p>
+                    <div className="relative group">
+                        <CircleUserRound
+                            className="mr-[20px] cursor-pointer"
+                            size={30}
+                        />
+
+                        <div className="absolute right-[30px] top-[40px] w-[150px] h-[100px] bg-white rounded-[10px] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            {/* Dropdown Content */}
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
@@ -29,6 +42,8 @@ function Nabvar(props) {
                         <Search size={20} className="text-gray-400" />
                         <input
                             type="text"
+                            value={props.query}
+                            onChange={(e) => props.setQuery(e.target.value)}
                             placeholder="Job title or keyword"
                             className="ml-3 w-full outline-none text-gray-700 placeholder:text-gray-400"
                         />
