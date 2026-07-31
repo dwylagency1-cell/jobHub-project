@@ -3,16 +3,33 @@ import logo from './img/joblogo.png'
 import Dashboard from './dashboard.jsx'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
+import { useContext } from "react";
+import { UserContext } from "./userContextProvider.jsx";
 function Form(props) {
     const navigate = useNavigate()
+    const { user, setUser } = useContext(UserContext);
     function handelSubmit(e) {
         e.preventDefault()
+        
         console.log(email)
         console.log(first)
         console.log(last)
+        console.log({
+            first,
+            last,
+            email
+        });
+
+        setUser({
+        first: first,
+        last: last,
+        email: email
+    });
+    
         setEmail('')
         setFirst('')
         setLast('')
+        
 
         navigate('/dashboard')
     }
