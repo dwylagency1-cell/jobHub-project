@@ -3,7 +3,14 @@ import img from './img/joblogo.png'
 import { Search, MapPin, PencilSparkles } from "lucide-react";
 import Fuse from "fuse.js"
 import {CircleUserRound} from 'lucide-react'
+import { useContext } from "react";
+import { UserContext } from "./userContextProvider.jsx";
+import Profile from './profile.jsx'
+import {User} from 'lucide-react'
+import {LogOut} from 'lucide-react'
 function Nabvar(props) {
+    const { user } = useContext(UserContext);
+    console.log(user)
     return <div>
         <div className='bg-green-300 h-[300px] w-full'>
             <div className="flex  justify-between items-center">
@@ -16,16 +23,20 @@ function Nabvar(props) {
                     <Link to={'/about'}>About</Link>
                 </div>
                 <div className=" h-[60px] w-[300px] flex justify-between items-center">
-                    <p className='text-[17px] ml-[10px]'>Hi, unemployed shit</p>
+                    <p className='text-[17px] ml-[10px]'>Hi, {user.first}  {user.last}</p>
                     <div className="relative group">
                         <CircleUserRound
                             className="mr-[20px] cursor-pointer"
                             size={30}
                         />
 
-                        <div className="absolute right-[30px] top-[40px] w-[150px] h-[100px] bg-white rounded-[10px] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                            {/* Dropdown Content */}
+                        <div className="absolute flex flex-col items-center justify-center gap-y-[10px] right-[30px] top-[40px] w-[150px] h-[100px] bg-white rounded-[10px] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            
+                            <Link className='flex gap-x-[10px]' to={'/profile'}>Profile <User size={20} /></Link>
+                            
+                            <Link className='flex gap-x-[10px]' to={'/Home'}>Logout <LogOut size={20} color='red'/></Link>
                         </div>
+
                     </div>
 
 
