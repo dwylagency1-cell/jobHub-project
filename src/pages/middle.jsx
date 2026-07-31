@@ -2,6 +2,17 @@ import Fuse from "fuse.js";
 import { useState } from "react";
 function Middle(props){
 
+    const [like, setLike] = useState(false)
+
+    let buttonclass
+
+    if (like === true){
+        buttonclass = "text-[22px] cursor-pointer text-red-500"
+    }
+    else{
+        buttonclass = "text-[22px] cursor-pointer text-gray-500"
+    }
+
     const query = props.query
     const jobHub = props.job
 
@@ -49,7 +60,14 @@ function Middle(props){
                         </div>
 
                         <button onClick={function(){
-                            className="bg-red-500"
+                           onClick={function () {
+                                if (liked === true) {
+                                    setLiked(false);
+                                } else {
+                                    setLiked(true);
+                                }
+                            }}
+                            className={buttonClass}
                         }} className="text-gray-400 text-[22px] cursor-pointer">
                             ♡
                         </button>
