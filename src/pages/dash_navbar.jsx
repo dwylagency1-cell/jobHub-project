@@ -34,7 +34,7 @@ function Nabvar(props) {
                             
                             <Link className='flex gap-x-[10px]' to={'/profile'}>Profile <User size={20} /></Link>
                             
-                            <Link className='flex gap-x-[10px]' to={'/Home'}>Logout <LogOut size={20} color='red'/></Link>
+                            <Link className='flex gap-x-[10px]' to={'/'}>Logout <LogOut size={20} color='red'/></Link>
                         </div>
 
                     </div>
