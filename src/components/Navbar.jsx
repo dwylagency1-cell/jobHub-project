@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logo from '../pages/img/joblogo.png'
+import logo from '../pages/img/job_logo.png'
 import { useNavigate } from 'react-router-dom'
 function Navbar() {
     const navigate =  useNavigate()
