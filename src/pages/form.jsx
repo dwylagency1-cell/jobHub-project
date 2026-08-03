@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import logo from './img/joblogo.png'
+import logo from './img/job_logo.png'
 import Dashboard from './dashboard.jsx'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
