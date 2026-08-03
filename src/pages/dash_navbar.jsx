@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import img from './img/joblogo.png'
+import img from './img/job_logo.png'
 import { Search, MapPin, PencilSparkles } from "lucide-react";
 import Fuse from "fuse.js"
 import {CircleUserRound} from 'lucide-react'
